@@ -52,12 +52,12 @@ Changez le template ** en remplaçant le code du template par  les lignes suivan
 </div>
 ```
 
-## Step 2: Recherche d'un pokémon via son numéro
+
+## Step 2: Recherche d'un pokémon via son numéro
 
 La première étape pour développer notre pokédex consiste à proposer au dresseur de rechercher un
 pokémon via son numéro. Nous allons donc créer un composant Angular qui va contenir et gérer cette
-interface. Pour créer un composant, il suffit de créer une classe et de lui ajouter l'annotation
-@Component. Cette annotation peut être complétée par plusieurs paramètres. Par exemple:
+interface. Pour créer un composant, il suffit de créer une classe et de lui ajouter l'annotation *@Component*. Cette annotation peut être complétée par plusieurs paramètres. Par exemple:
 
 - **selector** permet de définir le nom de l'élément html qui sera remplacé par notre composant
 - **templateUrl** permet de spécifier le fichier html qui servira de vue au composant
@@ -85,7 +85,7 @@ Vous constaterez que ng-cli génère automatiquement une structure pour vous ave
 
 ### Q1 : 
 
-Créer un composant avec un élément *<input>* afin de récupérer l'id recherché. Ajouter votre
+Créer un composant avec un élément *&lt;input>* afin de récupérer l'id recherché. Ajouter votre
 composant à la liste des directives et au template du composant my-component.
 
 Charger ce composant en ahjoutant le selector de ce composant dans le template du composant app.component.html
@@ -102,7 +102,7 @@ Vous constaterez que la page web contient maintenant le code html résultat du c
 
 
 
-Nous allons maintenant utiliser le data-binding d'Angular pour lier l'élément *<input>* à un attribut de
+Nous allons maintenant utiliser le data-binding d'Angular pour lier l'élément *&lt;input>* à un attribut de
 notre composant. En quelque sorte, nous allons lier la vue à notre modèle. 
 
 Pour cela il nous faut charger un module supplémentaire. Dans app.module.ts ajoutez un import
@@ -139,7 +139,7 @@ Il faut aussi aussi ajouter l'attribut dans la classe métier du composant.  Dan
 
 ### Q2 : 
 
-Créer un attribut id et lier le à l'élément *<input>* précédemment créé.
+Créer un attribut id et lier le à l'élément *&lt;input>* précédemment créé.
 
 Pour tester le lien entre l'attribut et l'élément HTML, nous allons utiliser une autre syntaxe utilisant
 aussi le méchanisme de data-binding : *{{myAttribute}}*. Cette syntaxe permet d'afficher la valeur d'un
@@ -152,7 +152,7 @@ Vous constaterez que dès que l'input est modifié par l'utilisateur, la vue con
 
 ### Q3 : 
 
-Créer un deuxième champs input en mode readonly et lié les deux par un id.  Afficher la valeur de l'id renseigné dans la balise *<input>* venant d'être insérée.
+Créer un deuxième champs input en mode readonly et lié les deux par un id.  Afficher la valeur de l'id renseigné dans la balise *&lt;input>* venant d'être insérée.
 
 ## Recherche dans une liste
 
@@ -176,11 +176,11 @@ créé.
 ### Q6 : 
 
 Afficher la liste des pokémons dans [https://angular.io/guide/template-syntax#ngforof](https://angular.io/guide/template-syntax#ngforof)
-une balise *<select>* en utilisant \*ngFor
+une balise *&lt;select>* en utilisant \*ngFor
 
 ### Q7 : 
 
-Récupérer le choix du dresseur en liant la balise *<select>* au modèle avec ngModel.
+Récupérer le choix du dresseur en liant la balise *&lt;select>* au modèle avec ngModel.
 
 
 ### Q8 : 
@@ -222,7 +222,7 @@ Pour valider le choix du dresseur, nous allons ajouter un bouton « Go ! » dont
 
 ### Q9 : 
 
-Ajouter un *<button>* à la page et lier l'évènement click à une méthode du contrôleur. Pour le
+Ajouter un *&lt;button>* à la page et lier l'évènement click à une méthode du contrôleur. Pour le
 moment la méthode se contentra d'afficher l'id ou le nom du pokémon recherché dans la console.
 
 ## Accès à une API
