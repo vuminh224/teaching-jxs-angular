@@ -73,7 +73,7 @@ export class MyComponent {
 }
 ```
 
-Pour faciliter la création d’un composant, nous allons utiliser l’outil [angular-cli](). Cet outil permet en
+Pour faciliter la création d’un composant, nous allons utiliser l’outil [angular-cli](https://github.com/angular/angular-cli/blob/master/packages/angular/cli/README.md). Cet outil permet en
 particulier de générer facilement les différents concepts liés à Angular comme les composants, les
 services ou les directives. Par exemple, pour générer le composant précédent, il suffit de taper 
 
@@ -95,10 +95,6 @@ Charger ce composant en ahjoutant le selector de ce composant dans le template d
 ```
 
 Vous constaterez que la page web contient maintenant le code html résultat du composant my-component à l'intérieur du composant app.component. 
-
-
-
-
 
 
 
