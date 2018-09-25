@@ -8,13 +8,10 @@ Angular est un framework développé par Google. Ce framework se base principale
 peut aussi utiliser Javascript 5/6 ou bien Dart.
 
 Pour vous aider dans votre quète, le professeur Chen vous a laissé des instructions ainsi que les
-éléments de bases pour créer un Pokédex à cette adresse : [https://github.com/barais/teaching-jxs-
-angular4](https://github.com/barais/teaching-jxs-
-angular4) (l'utilisation d'une bicyclette est conseillée pour s'y rendre plus vite).
+éléments de bases pour créer un Pokédex à cette adresse : [https://github.com/barais/teaching-jxs-angular4](https://github.com/barais/teaching-jxs-angular4) (l'utilisation d'une bicyclette est conseillée pour s'y rendre plus vite).
 
 
-C'est un [clone](https://github.com/gbecan/teaching-jxs-
-angular4) du sujet développé par Guillaume Becan (ancien doctorant de l'équipe). 
+C'est un [clone](https://github.com/gbecan/teaching-jxs-angular4) du sujet développé par Guillaume Becan (ancien doctorant de l'équipe). 
 
 ![](fig/fig1.png)
 
@@ -40,7 +37,7 @@ ng new poktaa
 ng serve
 ```
 
-Observez bien le squelette du projet généré. Il vient avec un point d'entrée (main.ts) et le fichier index.html racine. Ce dernier charge un composant sous la directive (selector) *&lt;app-root>&lt;/app-root>*. Cette directive demande l'instantiation d'un composant *app* défini dans le répertoire app. Ce composant est défini par une classe *app.component.ts*, un template *app.component.html*, une classe de test *app.component.spec.ts*, un fichier de définition de module *app.module.html* et un fichier de style *app.component.css*. 
+Observez bien le squelette du projet généré. Il vient avec un point d'entrée (main.ts) et le fichier index.html racine. Ce dernier charge un composant sous la directive (selector) *&lt;app-root>&lt;/app-root>*. Cette directive demande l'instantiation d'un composant *app* défini dans le répertoire *app*. Ce composant est défini par une classe *app.component.ts*, un template *app.component.html*, une classe de test *app.component.spec.ts*, un fichier de définition de module *app.module.html* et un fichier de style *app.component.css*. 
 
 Changez le template ** en remplaçant le code du template par  les lignes suivantes. Vous constaterez que l'application est rechargée automatiquement. 
 
@@ -86,15 +83,15 @@ Vous constaterez que ng-cli génère automatiquement une structure pour vous ave
 ### Q1 : 
 
 Créer un composant avec un élément *&lt;input>* afin de récupérer l'id recherché. Ajouter votre
-composant à la liste des directives et au template du composant my-component.
+composant à la liste des directives et au template du composant *my-component*.
 
-Charger ce composant en ahjoutant le selector de ce composant dans le template du composant app.component.html
+Charger ce composant en ahjoutant le selector de ce composant dans le template du composant *app.component.html*
 
 ```html
 <app-my-component></app-my-component>
 ```
 
-Vous constaterez que la page web contient maintenant le code html résultat du composant my-component à l'intérieur du composant app.component. 
+Vous constaterez que la page web contient maintenant le code html résultat du composant *my-component* à l'intérieur du composant *app.component*. 
 
 
 
@@ -149,6 +146,7 @@ Vous constaterez que dès que l'input est modifié par l'utilisateur, la vue con
 ### Q3 : 
 
 Créer un deuxième champs input en mode readonly et lié les deux par un id.  Afficher la valeur de l'id renseigné dans la balise *&lt;input>* venant d'être insérée.
+
 
 ## Recherche dans une liste
 
@@ -221,7 +219,9 @@ Pour valider le choix du dresseur, nous allons ajouter un bouton « Go ! » dont
 Ajouter un *&lt;button>* à la page et lier l'évènement click à une méthode du contrôleur. Pour le
 moment la méthode se contentra d'afficher l'id ou le nom du pokémon recherché dans la console.
 
+
 ## Accès à une API
+
 
 Le site [http://pokeapi.co/](http://pokeapi.co/) propose une API contenant de nombreuses informations sur les pokémons. En
 particulier, l'API offre la liste des pokémons (api/v2/pokedex/1) ainsi que des informations détaillées
@@ -272,6 +272,7 @@ mécanismes de data-binding vus jusqu'ici pour afficher l'id, le nom et les stat
 
 
 ## Communication entre contrôleurs
+
 
 À présent, nous avons deux parties à notre application. La première permet de rechercher un pokémon
 grâce à son numéro ou son nom. La deuxième récupère et affiche les informations d'un pokémon. Il ne
