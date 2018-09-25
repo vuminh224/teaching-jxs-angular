@@ -18,8 +18,41 @@ angular4) du sujet développé par Guillaume Becan (ancien doctorant de l'équip
 
 ![](fig/fig1.png)
 
+## Step 0
 
-## Recherche d'un pokémon via son numéro
+Vérifiez l'installation de nodejs à l'aide de nvm (voir guid d'install [http://olivier.barais.fr/blog/posts/teaching/istic/m2/french/2018/09/10/Operation_portable_M2_ISTIC.html](http://olivier.barais.fr/blog/posts/teaching/istic/m2/french/2018/09/10/Operation_portable_M2_ISTIC.html)
+
+### Installez ng-cli
+
+```bash
+npm install -g @angular/cli
+```
+
+## Step 1: Initialisation du projet
+
+```bash
+# génération d'un nouveau projet
+ng new poktaa
+```
+
+```bash
+# lancement du serveur
+ng serve
+```
+
+Observez bien le squelette du projet généré. Il vient avec un point d'entrée (main.ts) et le fichier index.html racine. Ce dernier charge un composant sous la directive (selector) *<app-root></app-root>*. Cette directive demande l'instantiation d'un composant *app* défini dans le répertoire app. Ce composant est défini par une classe *app.component.ts*, un template *app.component.html*, une classe de test *app.component.spec.ts*, un fichier de définition de module *app.module.html* et un fichier de style *app.component.css*. 
+
+Changez le template ** en remplaçant le code du template par  les lignes suivantes. Vous constaterez que l'application est rechargée automatiquement. 
+
+```html
+<div style="text-align:center">
+  <h1>
+   {{ title }}!
+  </h1>
+</div>
+```
+
+## Step 2: Recherche d'un pokémon via son numéro
 
 La première étape pour développer notre pokédex consiste à proposer au dresseur de rechercher un
 pokémon via son numéro. Nous allons donc créer un composant Angular qui va contenir et gérer cette
@@ -45,22 +78,64 @@ particulier de générer facilement les différents concepts liés à Angular co
 services ou les directives. Par exemple, pour générer le composant précédent, il suffit de taper 
 
 ```bash
-ng generate my-component
+ng generate component my-component
 ```
+
+Vous constaterez que ng-cli génère automatiquement une structure pour vous avec un répertoire par composant. 
 
 ### Q1 : 
 
 Créer un composant avec un élément *<input>* afin de récupérer l'id recherché. Ajouter votre
-composant à la liste des directives et au template du composant PokedexComponent.
+composant à la liste des directives et au template du composant my-component.
+
+Charger ce composant en ahjoutant le selector de ce composant dans le template du composant app.component.html
+
+```html
+<app-my-component></app-my-component>
+```
+
+Vous constaterez que la page web contient maintenant le code html résultat du composant my-component à l'intérieur du composant app.component. 
+
+
+
+
+
+
+
 Nous allons maintenant utiliser le data-binding d'Angular pour lier l'élément *<input>* à un attribut de
-notre composant. En quelque sorte, nous allons lier la vue à notre modèle. Pour cela, on utilise
-ngModel qui s'utilise comme ceci :
+notre composant. En quelque sorte, nous allons lier la vue à notre modèle. 
+
+Pour cela il nous faut charger un module supplémentaire. Dans app.module.ts ajoutez un import
+
+```ts
+import { FormsModule } from '@angular/forms';
+```
+
+et dans la section import, ajoutez le chargement de ce module pour votre application
+
+```ts
+  imports: [
+    FormsModule, //Line to add
+    BrowserModule
+  ],
+```
+
+
+Pour ajoutez le databinding, on utilise la directive  ngModel qui s'utilise comme ceci dans le fichier my-component-component.html :
 
 ```html
 <input [(ngModel)]="id">
 ```
 
 Ce code lie la valeur de l'élément input à l'attribut *id* de notre composant.
+
+
+Il faut aussi aussi ajouter l'attribut dans la classe métier du composant.  Dans  my-component-component.ts, ajouter l'attribut id de type string
+
+```ts
+  id: string = '';
+```
+
 
 ### Q2 : 
 
@@ -70,10 +145,14 @@ Pour tester le lien entre l'attribut et l'élément HTML, nous allons utiliser u
 aussi le méchanisme de data-binding : *{{myAttribute}}*. Cette syntaxe permet d'afficher la valeur d'un
 attribut du composant sur la page.
 
+
+Ajoutez {{id}} quelque part au sein de cotre template de votre composant (my-component-component.html ). 
+
+Vous constaterez que dès que l'input est modifié par l'utilisateur, la vue contenant la valeur de l'id est elle aussi modifiée. 
+
 ### Q3 : 
 
-
-Afficher la valeur de l'id renseigné dans la balise *<input>* précédente.
+Créer un deuxième champs input en mode readonly et lié les deux par un id.  Afficher la valeur de l'id renseigné dans la balise *<input>* venant d'être insérée.
 
 ## Recherche dans une liste
 
@@ -86,6 +165,9 @@ champ de recherche pour filtrer cette liste.
 Créer une classe Pokemon qui comporte un id et un nom. Nous compléterons la classe au fur et à
 mesure du TP.
 
+```bash
+ng g class pokemon
+```
 ### Q5 : 
 
 Créer une liste fictive (4-5 éléments suffiront) de pokémons dans le composant précédemment
@@ -100,15 +182,39 @@ une balise *<select>* en utilisant \*ngFor
 
 Récupérer le choix du dresseur en liant la balise *<select>* au modèle avec ngModel.
 
-Comme la liste des pokémons peut être très longue, nous allons proposer au dresseur de filtrer la liste.
 
 ### Q8 : 
 
-Ajouter un champ de texte et récupérer sa valeur dans un attribut. Utiliser le filtre
-PokemonNamePipe fournit pour filter la liste des pokémons suivant la valeur du champ texte. Ce filtre
-prend deux paramètres : le nom de l’attribut à filtrer et la valeur à rechercher.
-Pour valider le choix du dresseur, nous allons ajouter un bouton « Go ! » dont le comportement sera
-défini dans notre composant. Pour lier un évènement à notre composant, on utilise la syntaxe
+Comme la liste des pokémons peut être très longue, nous allons proposer au dresseur de filtrer la liste.
+
+
+Ajouter un champ de texte et récupérer sa valeur dans un attribut. Nous allons devoir créer un filtre à l'aide d'un *pipe* Angular. 
+
+Tout d'abord créons un *pipe*. 
+
+```bash
+ng g pipe filter-pokemon--pipe
+```
+
+dans la classe généré pour le pipe, vous verrez ce filtre
+prend deux paramètres : le nom de l’attribut à filtrer et la valeur à rechercher. La fonction transforme ressemblera à cela. 
+
+```ts
+  transform(value: any[], property?: string, searchString?: string): any {
+    if (typeof value !== 'undefined') {
+      return value.filter((e) => {
+        return e[property].toLowerCase().indexOf(searchString.toLowerCase()) !== -1;
+      });
+    } else {
+      return [];
+    }
+  }
+  ```
+
+En partant de la page de [documentation](https://angular.io/guide/pipes) sur les *pipes*, faites en sorte de permettre le filtre de votre liste depuis une entrée utilisateur. 
+
+
+Pour valider le choix du dresseur, nous allons ajouter un bouton « Go ! » dont le comportement sera défini dans notre composant. Pour lier un évènement à notre composant, on utilise la syntaxe qui permet d'appeler une méthode de notre composant. 
 
 ```html 
 (eventName)="codeToExecute()"
