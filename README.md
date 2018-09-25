@@ -148,7 +148,8 @@ Vous constaterez que dès que l'input est modifié par l'utilisateur, la vue con
 Créer un deuxième champs input en mode readonly et lié les deux par un id.  Afficher la valeur de l'id renseigné dans la balise *&lt;input>* venant d'être insérée.
 
 
-## Recherche dans une liste
+## Recherche dans une liste
+
 
 Malheureusement, seul le professeur Chen connaît précisément le numéro de tous les pokémons. Pour
 aider les jeunes dresseurs à utiliser le pokédex, nous allons offrir la liste des pokémons ainsi qu'un
