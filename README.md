@@ -1,4 +1,4 @@
-## Sujet de TP Angular TAA 
+# Sujet de TP Angular TAA
 
 ![](fig/banner.png)
 
