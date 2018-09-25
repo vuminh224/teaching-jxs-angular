@@ -1,6 +1,6 @@
 # Sujet de TP Angular TAA
 
-![](fig/banner.png)
+![](https://github.com/barais/teaching-jxs-angular/raw/master/img/banner.png)
 
 Votre aventure dans le monde merveilleux des frameworks JavaScript commence avec Angular.
 
@@ -13,7 +13,7 @@ Pour vous aider dans votre quète, le professeur Chen vous a laissé des instruc
 
 C'est un [clone](https://github.com/gbecan/teaching-jxs-angular4) du sujet développé par Guillaume Becan (ancien doctorant de l'équipe). 
 
-![](fig/fig1.png)
+![](https://github.com/barais/teaching-jxs-angular/raw/master/img/fig1.png)
 
 ## Step 0
 
@@ -255,7 +255,7 @@ Créer une méthode pour récupérer la liste des pokémons en utilisant le serv
 ### Q12 : 
 
 Utiliser ce service dans le composant de recherche de pokémons pour remplacer la liste fictive de
-pokémons. Pour cela, ajouter le paramètre providers au module PoktaaModule comme ceci :
+pokémons. Pour cela, ajouter le paramètre providers au module AppModule comme ceci :
 
 ```ts
 providers: [PokeApiService] 
@@ -292,7 +292,7 @@ d'informations.
 
 Créer un service contenant l'id du pokémon recherché. Injecter ce service dans le composant de
 recherche et le composant d'affichage des informations. On n'oublira pas de l'ajouter dans les providers
-du module PoktaaModule.
+du module AppModule.
 Les deux composants ont maintenant un service pour partager des informations liés et utilisent les
 mêmes informations. Cependant, les informations du pokémon ne sont pas mises à jour si le dresseur
 change le numéro ou le nom du pokémon recherché. Pour détecter les changements de ces deux
