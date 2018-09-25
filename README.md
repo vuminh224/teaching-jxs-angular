@@ -221,7 +221,10 @@ Ajouter un *&lt;button>* à la page et lier l'évènement click à une méthode 
 moment la méthode se contentra d'afficher l'id ou le nom du pokémon recherché dans la console.
 
 
-## Accès à une API
+
+## Accès à une API
+
+
 
 
 Le site [http://pokeapi.co/](http://pokeapi.co/) propose une API contenant de nombreuses informations sur les pokémons. En
@@ -272,7 +275,9 @@ service précédemment créé pour récupérer les informations d'un pokémon. C
 mécanismes de data-binding vus jusqu'ici pour afficher l'id, le nom et les statistiques d'un pokémon.
 
 
-## Communication entre contrôleurs
+
+## Communication entre contrôleurs
+
 
 
 À présent, nous avons deux parties à notre application. La première permet de rechercher un pokémon
