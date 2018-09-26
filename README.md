@@ -8,7 +8,7 @@ Angular est un framework développé par Google. Ce framework se base principale
 peut aussi utiliser Javascript 5/6 ou bien Dart.
 
 Pour vous aider dans votre quète, le professeur Chen vous a laissé des instructions ainsi que les
-éléments de bases pour créer un Pokédex à cette adresse : [https://github.com/barais/teaching-jxs-angular4](https://github.com/barais/teaching-jxs-angular4) (l'utilisation d'une bicyclette est conseillée pour s'y rendre plus vite).
+éléments de bases pour créer un Pokédex à cette adresse : [https://github.com/barais/teaching-jxs-angular](https://github.com/barais/teaching-jxs-angular) (l'utilisation d'une bicyclette est conseillée pour s'y rendre plus vite).
 
 
 C'est un [clone](https://github.com/gbecan/teaching-jxs-angular4) du sujet développé par Guillaume Becan (ancien doctorant de l'équipe). 
