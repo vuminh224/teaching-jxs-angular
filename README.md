@@ -192,7 +192,7 @@ Tout d'abord créons un *pipe*.
 ng g pipe filter-pokemon--pipe
 ```
 
-dans la classe généré pour le pipe, vous verrez ce filtre
+dans la classe générée pour le pipe, vous verrez ce filtre
 prend deux paramètres : le nom de l’attribut à filtrer et la valeur à rechercher. La fonction transforme ressemblera à cela. 
 
 ```ts
