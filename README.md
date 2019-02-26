@@ -29,7 +29,7 @@ npm install -g @angular/cli
 
 ```bash
 # génération d'un nouveau projet
-ng new pokdemo
+ng new pokedemo
 cd pokedemo
 ```
 
