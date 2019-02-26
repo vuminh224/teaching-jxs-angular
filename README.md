@@ -1,4 +1,4 @@
-# Sujet de TP Angular TAA
+# Sujet de TP Angular 
 
 ![](https://github.com/barais/teaching-jxs-angular/raw/master/img/banner.png)
 
@@ -29,7 +29,8 @@ npm install -g @angular/cli
 
 ```bash
 # génération d'un nouveau projet
-ng new poktaa
+ng new pokdemo
+cd pokedemo
 ```
 
 ```bash
