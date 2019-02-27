@@ -193,7 +193,7 @@ ng g pipe filter-pokemon--pipe
 ```
 
 dans la classe générée pour le pipe, vous verrez ce filtre
-prend deux paramètres : le nom de l’attribut à filtrer et la valeur à rechercher. La fonction transforme ressemblera à cela. 
+prend deux paramètres : le nom de l’attribut à filtrer et la valeur à rechercher. La fonction *transform* ressemblera à cela. 
 
 ```ts
   transform(value: any[], property?: string, searchString?: string): any {
@@ -233,7 +233,7 @@ particulier, l'API offre la liste des pokémons (api/v2/pokedex/1) ainsi que des
 pour chacun d'entre eux (api/v2/pokemon/54 ou api/v2/pokemon/psyduck). Nous allons utiliser cette
 API comme source d'information pour notre pokédex.
 
-Angular fournit un [service HTTP]() qui va nous permettre de communiquer avec PokéAPI. Angular
+Angular fournit un [service HTTP](https://angular.io/guide/http) qui va nous permettre de communiquer avec PokéAPI. Angular
 utilise l'injection de dépendances pour fournir les services. Cela permet en particulier d'instancier un
 service qu'une seule fois pour toute l'application ou bien une partie de celle-ci. Pour encapsuler l'accès à
 l'API, nous allons nous même créer un service. Un service Angular est en fait une classe.
@@ -294,7 +294,7 @@ d'informations.
 Créer un service contenant l'id du pokémon recherché. Injecter ce service dans le composant de
 recherche et le composant d'affichage des informations. On n'oublira pas de l'ajouter dans les providers
 du module AppModule.
-Les deux composants ont maintenant un service pour partager des informations liés et utilisent les
+Les deux composants ont maintenant un service pour partager des informations liées et utilisent les
 mêmes informations. Cependant, les informations du pokémon ne sont pas mises à jour si le dresseur
 change le numéro ou le nom du pokémon recherché. Pour détecter les changements de ces deux
 attributs, nous allons utiliser la notion d'observable.
