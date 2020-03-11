@@ -149,6 +149,13 @@ Vous constaterez que dès que l'input est modifié par l'utilisateur, la vue con
 Créer un deuxième champs input en mode readonly et lié les deux par un id.  Afficher la valeur de l'id renseigné dans la balise *&lt;input>* venant d'être insérée.
 
 
+### Q3bis :
+
+comprendre pourquoi il devient difficile de faire une attaque XSS sur une application angular
+
+[lien](https://ripcordsystems.com/2019/03/09/angular-how-to-prevent-xss-attacks-code-examples/)
+
+
 ## Recherche dans une liste
 
 
