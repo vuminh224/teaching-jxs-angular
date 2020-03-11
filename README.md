@@ -229,6 +229,18 @@ Ajouter un *&lt;button>* à la page et lier l'évènement click à une méthode 
 moment la méthode se contentra d'afficher l'id ou le nom du pokémon recherché dans la console.
 
 
+## Intégration de composants existants
+
+
+### Q9 bis: 
+
+
+Intégration de composants material UI. 
+
+En suivant ce [guide](https://material.angular.io/guide/getting-started), intgréer un composant angular à votre application. 
+Regardez le nombre de module util à la comilation et le nombre de dépendances utilisés. (Dans votre node_module)
+
+
 
 ## Accès à une API
 
