@@ -217,13 +217,15 @@ prend deux paramètres : le nom de l’attribut à filtrer et la valeur à reche
 En partant de la page de [documentation](https://angular.io/guide/pipes) sur les *pipes*, faites en sorte de permettre le filtre de votre liste depuis une entrée utilisateur. 
 
 
+### Q9 : 
+
 Pour valider le choix du dresseur, nous allons ajouter un bouton « Go ! » dont le comportement sera défini dans notre composant. Pour lier un évènement à notre composant, on utilise la syntaxe qui permet d'appeler une méthode de notre composant. 
 
 ```html 
 (eventName)="codeToExecute()"
 ```
 
-### Q9 : 
+
 
 Ajouter un *&lt;button>* à la page et lier l'évènement click à une méthode du contrôleur. Pour le
 moment la méthode se contentra d'afficher l'id ou le nom du pokémon recherché dans la console.
