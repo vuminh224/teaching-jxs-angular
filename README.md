@@ -254,7 +254,7 @@ particulier, l'API offre la liste des pokémons (api/v2/pokedex/1) ainsi que des
 pour chacun d'entre eux (api/v2/pokemon/54 ou api/v2/pokemon/psyduck). Nous allons utiliser cette
 API comme source d'information pour notre pokédex.
 
-Angular fournit un [service HTTP]() qui va nous permettre de communiquer avec PokéAPI. Angular
+Angular fournit un [service HTTP](https://angular.io/guide/http) qui va nous permettre de communiquer avec PokéAPI. Angular
 utilise l'injection de dépendances pour fournir les services. Cela permet en particulier d'instancier un
 service qu'une seule fois pour toute l'application ou bien une partie de celle-ci. Pour encapsuler l'accès à
 l'API, nous allons nous même créer un service. Un service Angular est en fait une classe.
