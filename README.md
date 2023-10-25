@@ -17,7 +17,7 @@ C'est un [clone](https://github.com/gbecan/teaching-jxs-angular4) du sujet déve
 
 ## Step 0
 
-Vérifiez l'installation de nodejs à l'aide de nvm (voir guid d'install [http://olivier.barais.fr/blog/posts/teaching/istic/m2/french/2018/09/10/Operation_portable_M2_ISTIC.html](http://olivier.barais.fr/blog/posts/teaching/istic/m2/french/2018/09/10/Operation_portable_M2_ISTIC.html)
+Vérifiez l'installation de nodejs à l'aide de nvm (voir [guide d'instal](https://olivier.barais.fr/teaching/2022-09-08-Operation_portable_M2_ISTIC#etape-4-nodejs)
 
 ### Installez ng-cli
 
@@ -64,8 +64,8 @@ interface. Pour créer un composant, il suffit de créer une classe et de lui aj
 ```ts
 @Component({
 selector: "my-component",
-templateUrl: "app/my-component.html",
-styleUrls: "app/my-component.css",
+templateUrl: "./my-component.html",
+styleUrls: ["./my-component.css"],
 })
 export class MyComponent {
 }
