@@ -4,10 +4,9 @@
 
 Votre aventure dans le monde merveilleux des frameworks JavaScript commence avec Angular.
 
-Angular est un framework développé par Google. Ce framework se base principalement sur la définition de composants et de services. L'objectif est d'avoir un code modulaire et réutilisable. Le langage recommandé pour programmer avec Angular et celui que nous allons utiliser est Typescript. On
-peut aussi utiliser Javascript 5/6 ou bien Dart.
+Angular est un framework développé par Google. Ce framework se base principalement sur la définition de composants et de services. L'objectif est d'avoir un code modulaire et réutilisable. Le langage recommandé pour programmer avec Angular et celui que nous allons utiliser est Typescript. On peut aussi utiliser Javascript 5/6 ou bien Dart.
 
-Pour vous aider dans votre quète, le professeur Chen vous a laissé des instructions ainsi que les
+Pour vous aider dans votre quête, le professeur Chen vous a laissé des instructions ainsi que les
 éléments de bases pour créer un Pokédex à cette adresse : [https://github.com/barais/teaching-jxs-angular](https://github.com/barais/teaching-jxs-angular) (l'utilisation d'une bicyclette est conseillée pour s'y rendre plus vite).
 
 
@@ -29,7 +28,7 @@ npm install -g @angular/cli
 
 ```bash
 # génération d'un nouveau projet
-ng new pokedemo
+ng new pokedemo --standalone=false --routing=true --ssr=false
 cd pokedemo
 ```
 
@@ -51,10 +50,10 @@ Changez le template *app-component.html* en remplaçant le code du template par 
 ```
 
 
-## Step 2: Recherche d'un pokémon via son numéro
+## Step 2: Recherche d'un pokemon via son numéro
 
 La première étape pour développer notre pokédex consiste à proposer au dresseur de rechercher un
-pokémon via son numéro. Nous allons donc créer un composant Angular qui va contenir et gérer cette
+pokemon via son numéro. Nous allons donc créer un composant Angular qui va contenir et gérer cette
 interface. Pour créer un composant, il suffit de créer une classe et de lui ajouter l'annotation *@Component*. Cette annotation peut être complétée par plusieurs paramètres. Par exemple:
 
 - **selector** permet de définir le nom de l'élément html qui sera remplacé par notre composant
@@ -136,7 +135,7 @@ Il faut aussi aussi ajouter l'attribut dans la classe métier du composant.  Dan
 Créer un attribut id et lier le à l'élément *&lt;input>* précédemment créé.
 
 Pour tester le lien entre l'attribut et l'élément HTML, nous allons utiliser une autre syntaxe utilisant
-aussi le méchanisme de data-binding : *{{myAttribute}}*. Cette syntaxe permet d'afficher la valeur d'un
+aussi le mécanisme de data-binding : *{{myAttribute}}*. Cette syntaxe permet d'afficher la valeur d'un
 attribut du composant sur la page.
 
 
@@ -151,7 +150,7 @@ Créer un deuxième champs input en mode readonly et lié les deux par un id.  A
 
 ### Q3bis :
 
-comprendre pourquoi il devient difficile de faire une attaque XSS sur une application angular
+Expliquer pourquoi il devient difficile de faire une attaque XSS sur une application angular
 
 [lien](https://vitalflux.com/angular-prevent-xss-attacks-code-examples/)
 
@@ -159,8 +158,8 @@ comprendre pourquoi il devient difficile de faire une attaque XSS sur une applic
 ## Recherche dans une liste
 
 
-Malheureusement, seul le professeur Chen connaît précisément le numéro de tous les pokémons. Pour
-aider les jeunes dresseurs à utiliser le pokédex, nous allons offrir la liste des pokémons ainsi qu'un
+Malheureusement, seul le professeur Chen connaît précisément le numéro de tous les pokemon. Pour
+aider les jeunes dresseurs à utiliser le pokédex, nous allons offrir la liste des pokemon ainsi qu'un
 champ de recherche pour filtrer cette liste.
 
 ### Q4 : 
@@ -173,12 +172,12 @@ ng g class pokemon
 ```
 ### Q5 : 
 
-Créer une liste fictive (4-5 éléments suffiront) de pokémons dans le composant précédemment
+Créer une liste fictive (4-5 éléments suffiront) de pokemon dans le composant précédemment
 créé.
 
 ### Q6 : 
 
-Afficher la liste des pokémons dans [https://angular.io/guide/template-syntax#ngforof](https://angular.io/guide/template-syntax#ngforof)
+Afficher la liste des pokemon dans [https://angular.io/guide/template-syntax#ngforof](https://angular.io/guide/template-syntax#ngforof)
 une balise *&lt;select>* en utilisant \*ngFor
 
 ### Q7 : 
@@ -188,7 +187,7 @@ Récupérer le choix du dresseur en liant la balise *&lt;select>* au modèle ave
 
 ### Q8 : 
 
-Comme la liste des pokémons peut être très longue, nous allons proposer au dresseur de filtrer la liste.
+Comme la liste des pokemon peut être très longue, nous allons proposer au dresseur de filtrer la liste.
 
 
 Ajouter un champ de texte et récupérer sa valeur dans un attribut. Nous allons devoir créer un filtre à l'aide d'un *pipe* Angular. 
@@ -203,10 +202,13 @@ dans la classe générée pour le pipe, vous verrez ce filtre
 prend deux paramètres : le nom de l’attribut à filtrer et la valeur à rechercher. La fonction *transform* ressemblera à cela. 
 
 ```ts
-  transform(value: any[], property?: string, searchString?: string): any {
-    if (typeof value !== 'undefined') {
-      return value.filter((e) => {
-        return e[property].toLowerCase().indexOf(searchString.toLowerCase()) !== -1;
+ transform(pokes: any[], property?: string, searchString?: string): any {
+    if(typeof searchString == 'undefined'){
+      return pokes;
+    }
+    else if (typeof pokes !== 'undefined' && typeof property !== 'undefined') {
+      return pokes.filter((poke) => {
+        return poke[property].toLowerCase().indexOf(searchString.toLowerCase()) !== -1;
       });
     } else {
       return [];
@@ -228,7 +230,7 @@ Pour valider le choix du dresseur, nous allons ajouter un bouton « Go ! » dont
 
 
 Ajouter un *&lt;button>* à la page et lier l'évènement click à une méthode du contrôleur. Pour le
-moment la méthode se contentra d'afficher l'id ou le nom du pokémon recherché dans la console.
+moment la méthode se contentra d'afficher l'id ou le nom du pokemon recherché dans la console.
 
 
 ## Intégration de composants existants
@@ -246,11 +248,8 @@ Regardez le nombre de module util à la comilation et le nombre de dépendances 
 
 ## Accès à une API
 
-
-
-
-Le site [http://pokeapi.co/](http://pokeapi.co/) propose une API contenant de nombreuses informations sur les pokémons. En
-particulier, l'API offre la liste des pokémons (api/v2/pokedex/1) ainsi que des informations détaillées
+Le site [http://pokeapi.co/](http://pokeapi.co/) propose une API contenant de nombreuses informations sur les pokemon. En
+particulier, l'API offre la liste des pokemon (api/v2/pokedex/1) ainsi que des informations détaillées
 pour chacun d'entre eux (api/v2/pokemon/54 ou api/v2/pokemon/psyduck). Nous allons utiliser cette
 API comme source d'information pour notre pokédex.
 
@@ -272,12 +271,12 @@ spécifier à Angular que votre service comporte une dépendance vers un autre s
 
 ### Q11 : 
 
-Créer une méthode pour récupérer la liste des pokémons en utilisant le service *http*.
+Créer une méthode pour récupérer la liste des pokemon en utilisant le service *http*.
 
 ### Q12 : 
 
-Utiliser ce service dans le composant de recherche de pokémons pour remplacer la liste fictive de
-pokémons. Pour cela, ajouter le paramètre providers au module AppModule comme ceci :
+Utiliser ce service dans le composant de recherche de pokemon pour remplacer la liste fictive de pokémons. Pour cela, ajouter le paramètre providers au module AppModule comme ceci :
+
 
 ```ts
 providers: [PokeApiService] 
@@ -324,3 +323,18 @@ attributs, nous allons utiliser la notion d'observable.
 
 Créer un observable dans le service précédemment créé. Le composant d'affichage d'informations
 d'un pokémon peut maintenant souscrire à cet observable pour détecter le changement de pokémon.
+
+## Intégration de composants open source
+
+### Q17: 
+La richesse d'Angular réside également dans son écosystème de librairies de composants réutilisables et open source.
+
+* Vous allez maintenant intégrer un composant Angular issue d'une librairie open source dans votre application. 
+
+  Dans le cadre de ce tp je vous recommande d'utiliser [primeng](https://primefaces.org/primeng/showcase/#/setup) 
+  ou [Angular Material](https://material.angular.io/guide/getting-started).
+
+  Vous trouverez également d'autres librairies de composants intéressentes sur la page [Angular Dev Resources](https://angular.io/resources?category=development) du site d'Angular.
+
+
+* Regardez le nombre de module utile à la compilation et le nombre de dépendances utilisés. (Dans votre node_module)
