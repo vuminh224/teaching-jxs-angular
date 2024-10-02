@@ -16,7 +16,14 @@ C'est un [clone](https://github.com/gbecan/teaching-jxs-angular4) du sujet déve
 
 ## Step 0
 
-Vérifiez l'installation de nodejs à l'aide de nvm (voir [guide d'instal](https://olivier.barais.fr/teaching/2022-09-08-Operation_portable_M2_ISTIC#etape-4-nodejs)
+Vérifiez l'installation de nodejs à l'aide de nvm (voir [guide d'instal](https://olivier.barais.fr/teaching/2022-09-08-Operation_portable_M2_ISTIC#etape-4-nodejs))
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+# Relancer bash
+bash
+nvm install 22
+```
 
 ### Installez ng-cli
 
