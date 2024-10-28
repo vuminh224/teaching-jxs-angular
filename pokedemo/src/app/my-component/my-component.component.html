@@ -10,8 +10,9 @@ Mon id est : {{id}}
 <!-- Q6 Q7 select return value poke.id ( faut définir dans ts file)-->
 <BR>
     Mon id est : {{selectedPokeId}}
-<BR>    
+<BR>
+    <input [(ngModel)]="searchPokeName">    
     <select [(ngModel)]= "selectedPokeId"> 
-        <option [value]="poke.id" *ngFor= "let poke of pokes"> {{poke.name}}</option>     
+        <option [value]="poke.id" *ngFor= "let poke of pokes | filterPokemonPipe: 'name':searchPokeName"> {{poke.name}}</option>     
     </select>
 
