@@ -8,6 +8,7 @@ import {Pokemon} from '../pokemon';
 })
 export class MyComponentComponent implements OnInit {
   id: string ='';
+  selectedPokeId: string ="";
   //Q5
   // pokes: type list Pokemon avec une liste vide
   pokes : Pokemon[] = [];
