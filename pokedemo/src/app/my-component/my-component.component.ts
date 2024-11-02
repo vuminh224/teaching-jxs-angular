@@ -23,5 +23,10 @@ export class MyComponentComponent implements OnInit {
 
 
   }
+
+  go(){
+    //TP9
+    console.log(this.selectedPokeId);
+  }
   ngOnInit(): void {}
 }
