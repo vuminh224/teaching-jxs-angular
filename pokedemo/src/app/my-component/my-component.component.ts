@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Pokemon} from '../pokemon';
+import {PokeAPIServiceService} from '../poke-apiservice.service';
 
 @Component({
   selector: 'app-my-component',
@@ -13,7 +14,7 @@ export class MyComponentComponent implements OnInit {
   //Q5
   // pokes: type list Pokemon avec une liste vide
   pokes : Pokemon[] = [];
-  constructor() {
+  constructor(private pokeService : PokeAPIServiceService) {
     this.pokes.push(new Pokemon(0,'bulbasaur'));
 
     this.pokes.push(new Pokemon(1,'ivysaur'));
@@ -28,5 +29,8 @@ export class MyComponentComponent implements OnInit {
     //TP9
     console.log(this.selectedPokeId);
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //add q10
+    this.pokeService.getPokemons();
+  }
 }
