@@ -5,7 +5,8 @@ import {PokeAPIServiceService} from '../poke-apiservice.service';
 @Component({
   selector: 'app-my-component',
   templateUrl: './my-component.component.html',
-  styleUrl: './my-component.component.css'
+  styleUrl: './my-component.component.css',
+  providers: [PokeAPIServiceService]
 })
 export class MyComponentComponent implements OnInit {
   id: string ='';
@@ -29,7 +30,7 @@ export class MyComponentComponent implements OnInit {
       //console.log(data.results);
 
       data.results.forEach((e:any, index: any)=> {
-        this.pokes.push(new Pokemon(index, e.name, e.url));
+        this.pokes.push(new Pokemon('' +index, e.name, e.url));
       });
     });
   }
