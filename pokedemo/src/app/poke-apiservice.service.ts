@@ -11,9 +11,7 @@ export class PokeAPIServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getPokemons(){
-     this.http.get('https://pokeapi.co/api/v2/pokemon').subscribe((data) =>
-    console.log(data)
-    );
+  getPokemons(): Observable<any>{
+     return this.http.get('https://pokeapi.co/api/v2/pokemon');
   }
 }

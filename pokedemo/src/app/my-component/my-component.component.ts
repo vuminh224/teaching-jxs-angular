@@ -15,14 +15,6 @@ export class MyComponentComponent implements OnInit {
   // pokes: type list Pokemon avec une liste vide
   pokes : Pokemon[] = [];
   constructor(private pokeService : PokeAPIServiceService) {
-    this.pokes.push(new Pokemon(0,'bulbasaur'));
-
-    this.pokes.push(new Pokemon(1,'ivysaur'));
-    this.pokes.push(new Pokemon(2,'venusaur'));
-    this.pokes.push(new Pokemon(3,'charmander'));
-    this.pokes.push(new Pokemon(4,'charmeleon'));
-
-
   }
 
   go(){
@@ -31,6 +23,14 @@ export class MyComponentComponent implements OnInit {
   }
   ngOnInit(): void {
     //add q10
-    this.pokeService.getPokemons();
+    //console.log(this.pokeService.getPokemons());
+    //Q11
+    this.pokeService.getPokemons().subscribe((data) => {
+      //console.log(data.results);
+
+      data.results.forEach((e:any, index: any)=> {
+        this.pokes.push(new Pokemon(index, e.name, e.url));
+      });
+    });
   }
 }
